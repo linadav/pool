@@ -1,1 +1,20 @@
 # pool
+
+Software Development Academy. Final Project. Pool Attendance app
+
+The idea is to have an app where administrator can keep a record of the attendance of participants in the regular event, make payment balance.   
+User (eg. parents) can view the attendace and payment balance (eg. of child in the regular pool sessions).
+
+Additional features include:
+- user roles admin and user-parent (eg. parent of participant) 
+- CRUD participant 
+- make monthly balance and balance of the whole period (eg. semester)
+- make statistics of atendance 
+- Have a personal rating for each book
+- sent e-mail to user-parent with payment balance  
+- show anonymous statistics of group attendance to user
+
+Application uses Java 8, Spring, Angular, MySQL, Rest API endpoints.
+DB visualization:
+
+https://dbdiagram.io/d
