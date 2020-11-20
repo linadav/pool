@@ -1,49 +1,48 @@
 CREATE TABLE IF NOT EXISTS users
 (
-    id_users       INT PRIMARY KEY AUTO_INCREMENT,
-    first_name     VARCHAR(255),
-    last_name      VARCHAR(255),
-    email          VARCHAR(255),
-    id_participant INT
+    iduser    INT PRIMARY KEY AUTO_INCREMENT,
+    firstname VARCHAR(255),
+    lastname  VARCHAR(255),
+    email     VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS participants
 (
-    id_participant INT PRIMARY KEY AUTO_INCREMENT,
-    first_name     VARCHAR(255),
-    last_name      VARCHAR(255),
-    date_start      DATE,
-    date_stop       DATE,
-    email          VARCHAR(255),
-    personal_code  VARCHAR(255)
+    idparticipant INT PRIMARY KEY AUTO_INCREMENT,
+    firstname     VARCHAR(255),
+    lastname      VARCHAR(255),
+    datestart     DATE,
+    datestop      DATE,
+    email         VARCHAR(255),
+    personalcode  VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS attendance
 (
-    id_attendance  INT PRIMARY KEY AUTO_INCREMENT,
-    dateStart      DATE,
-    id_participant INT,
-    attendance     BOOLEAN
+    idattendance  INT PRIMARY KEY AUTO_INCREMENT,
+    datestart     DATE,
+    idparticipant INT,
+    attendance    BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS activities
 (
-    id_activity INT PRIMARY KEY AUTO_INCREMENT,
-    activityname    VARCHAR(255)
+    idactivity   INT PRIMARY KEY AUTO_INCREMENT,
+    activityname VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS participant_activities
 (
-    id_participant INT,
-    id_activity    INT
+    idparticipant INT,
+    idactivity    INT
 );
 
 CREATE TABLE IF NOT EXISTS payment
 (
-    id_payment     INT PRIMARY KEY AUTO_INCREMENT,
-    dateStart      DATE,
-    id_participant INT,
-    payment        DOUBLE
+    idpayment     INT PRIMARY KEY AUTO_INCREMENT,
+    datestart     DATE,
+    idparticipant INT,
+    payment       DOUBLE
 );
 
 -- ALTER TABLE users

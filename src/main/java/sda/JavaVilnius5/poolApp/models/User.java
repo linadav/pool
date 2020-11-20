@@ -8,10 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-//           first_name     VARCHAR(255),
-//           last_name      VARCHAR(255),
-//           email          VARCHAR(255),
-//           id_participant INT);
 @Entity
 @Data
 @Table(name = "users")
@@ -21,21 +17,19 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_user;
+    private Long iduser;
 
     @Column
-    private String first_name;
+    private String firstname;
 
     @Column
-    private String last_name;
+    private String lastname;
 
     @Column
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_participant")
-    @JsonBackReference
-    private Participant participant;
-
-
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id_participant")
+//    @JsonBackReference
+//    private Participant participant;
 }

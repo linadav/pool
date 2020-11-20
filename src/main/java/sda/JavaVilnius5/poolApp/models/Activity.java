@@ -1,6 +1,7 @@
 package sda.JavaVilnius5.poolApp.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +10,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -21,20 +24,20 @@ public class Activity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_activity;
+    @Column(name = "idactivity")
+    private Long idactivity;
 
     @Column
     String activityname;
 
     @JsonManagedReference
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "participant_activities",
-            joinColumns = @JoinColumn(name = "id_activity"),
-            inverseJoinColumns = @JoinColumn(name = "id_participant")
+            joinColumns = @JoinColumn(name = "idactivity"),
+            inverseJoinColumns = @JoinColumn(name = "idparticipant")
     )
-
-    // @JsonIgnore
+    @JsonIgnore
     private List<Participant> participants = new ArrayList<>();
 
 }
